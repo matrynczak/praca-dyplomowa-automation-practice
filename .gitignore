@@ -1,0 +1,8 @@
+*.DS_Store
+allure-report/*
+allure-results/*
+node_modules/*
+errorShots/*
+.idea
+package-lock.json
+local.log

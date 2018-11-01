@@ -1,0 +1,45 @@
+{
+  "name": "Praca dyplomowa inżynierska",
+  "version": "1.0.0",
+  "description": "Projekt testow automatycznych strony Automation Practice w ramach pracy dyplomowej.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test-local": "PATH_TO_CONFIG='/environmentConfigs/envConfig.json' node_modules/.bin/wdio wdio.conf.js --spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matrynczak/praca-dyplomowa-automation-practice.git"
+  },
+  "author": "Mateusz Rynczak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matrynczak/praca-dyplomowa-automation-practice/issues"
+  },
+  "homepage": "https://github.com/matrynczak/praca-dyplomowa-automation-practice#readme",
+  "devDependencies": {
+    "allure-js-commons": "^1.3.1",
+    "chai": "^4.1.2",
+    "cucumber": "^3.2.1",
+    "wdio-allure-reporter": "^0.1.3",
+    "wdio-browserstack-service": "^0.1.14",
+    "wdio-chromedriver-service": "^0.1.2",
+    "wdio-cucumber-framework": "^1.0.3",
+    "wdio-dot-reporter": "0.0.9",
+    "wdio-mocha-framework": "^0.5.12",
+    "wdio-selenium-standalone-service": "0.0.10",
+    "webdriverio": "^4.12.0"
+  },
+  "dependencies": {
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.0",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-transform-es2015-block-scoped-functions": "^6.22.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "chromedriver": "^2.36.0",
+    "chromedriver-runner": "^1.0.0"
+  }
+}
