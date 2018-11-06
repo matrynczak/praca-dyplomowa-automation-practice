@@ -1,26 +1,26 @@
 const {defineSupportCode} = require('cucumber');
-import naglowek from '../pages/naglowek-page';
+// import naglowek from '../pages/naglowek-page';
 
 defineSupportCode(function ({Given, Then, When}) {
     When(/^wciska przycisk Contact Us$/, function () {
-        naglowek.fillFlashOddsBannerForm();
+        // naglowek.();
     });
     Then(/^użytkownik zostaje przeniesiony na stronę kontaktową sklepu$/, function () {
-        naglowek.changeTitleAndImageOfFlashOddsBanner();
+        // naglowek.();
     });
     Then(/^wciska przycisk Sign In$/, function () {
-        naglowek.createdFlashOddslBannerIsVisibleInBrowser();
+        // naglowek.();
     });
     Then(/^użytkownik zostaje przeniesiony na stronę logowania rejestracji do sklepu$/, function () {
-        naglowek.editedFlashOddsBannerIsVisibleInBrowser();
+        //  naglowek.();
     });
     Then(/^przechodzi na dowolną podstronę$/, function () {
-        naglowek.formOfFlashOddsBannerIsEmpty();
+        // naglowek.();
     });
     Then(/^wciska przycisk loga w nagłówku$/, function () {
-        naglowek.clicksFlashOddsBannerButton();
+        // naglowek.();
     });
     Then(/^użytkownik zostaje przeniesiony na stronę główną$/, function () {
-        naglowek.fillFlashOddsBannerFormWithoutRequiredFields();
+        // naglowek.();
     });
 });
