@@ -3,7 +3,6 @@ import assert from 'assert';
 const testURL = "http://automationpractice.com";
 const user = require('../environmentConfigs/envConfig').user;
 import helpers from '../helpers/help-functions';
-import actions from '../helpers/actions';
 
 class Assert {
 
@@ -81,6 +80,21 @@ class Assert {
      */
     numberOfElementGreaterThanZero(element) {
         return element.value.length >= 1;
+    }
+
+    /**
+     * NEW METHODS - MORE SPECIFIC, NOT GENERAL
+     */
+    assertUserIsMovedToContactUsPage() {
+        assert.equal(browser.getUrl(), 'http://automationpractice.com/index.php?controller=contact');
+    }
+
+    assertUserIsMovedToRegistrationPage() {
+        assert.equal(browser.getUrl(), 'http://automationpractice.com/index.php?controller=authentication&back=my-account');
+    }
+
+    assertUserIsMovedToHomePage() {
+        assert.equal(browser.getUrl(), 'http://automationpractice.com/index.php');
     }
 }
 
