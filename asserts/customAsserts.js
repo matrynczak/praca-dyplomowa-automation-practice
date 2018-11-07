@@ -86,15 +86,19 @@ class Assert {
      * NEW METHODS - MORE SPECIFIC, NOT GENERAL
      */
     assertUserIsMovedToContactUsPage() {
-        assert.equal(browser.getUrl(), 'http://automationpractice.com/index.php?controller=contact');
+        assert.equal(browser.getUrl(), `${testURL}/index.php?controller=contact`);
     }
 
     assertUserIsMovedToRegistrationPage() {
-        assert.equal(browser.getUrl(), 'http://automationpractice.com/index.php?controller=authentication&back=my-account');
+        assert.equal(browser.getUrl(), `${testURL}/index.php?controller=authentication&back=my-account`);
     }
 
     assertUserIsMovedToHomePage() {
-        assert.equal(browser.getUrl(), 'http://automationpractice.com/index.php');
+        assert.equal(browser.getUrl(), `${testURL}/index.php`);
+    }
+
+    assertTextOfElementIsCorrect(elementOnSite, expectedText) {
+        assert.equal(elementOnSite.getText(), expectedText);
     }
 }
 

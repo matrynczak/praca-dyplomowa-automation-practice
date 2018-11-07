@@ -1,7 +1,6 @@
 import Page from './initPage';
 import helpers from '../helpers/help-functions';
 
-const rndSubpageNum = helpers.getRandomNumber(1,3);
 
 class HeaderPage extends Page {
 
@@ -12,8 +11,11 @@ class HeaderPage extends Page {
     contactUsButton() {
         return browser.element('div#contact-link a');
     }
-    subpage(rndNum) {
+    selectedSubpageFromMenu(rndNum) {
         return browser.element(`(//ul[@class=\'sf-menu clearfix menu-content sf-js-enabled sf-arrows\']/li)[${rndNum}]`);
+    }
+    subpageFromMenu() {
+        return browser.elements('//ul[@class=\'sf-menu clearfix menu-content sf-js-enabled sf-arrows\']/li');
     }
 
 
@@ -21,13 +23,17 @@ class HeaderPage extends Page {
      * define or overwrite page methods
      */
 
+    drawRandomSubpageToOpen() {
+        const subpagesNumber = helpers.getLength(this.subpageFromMenu());
+        return helpers.getRandomNumber(1, subpagesNumber);
+    }
 
     clickOnContactUsButton() {
         this.contactUsButton().click();
     }
 
     clickRandomSubPage() {
-        this.subpage(rndSubpageNum).click();
+        this.selectedSubpageFromMenu(this.drawRandomSubpageToOpen()).click();
     }
 }
 

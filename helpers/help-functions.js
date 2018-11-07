@@ -204,7 +204,11 @@ let helpFunctions = {
     addTagToInput(tagName, input) {
         input.setValue(tagName);
         browser.keys("Enter")
-    }
+    },
+
+    selectRandomElementFromSelectList(listElementsCollection, selectedElementNumber) {
+        listElementsCollection.value[selectedElementNumber].click();
+    },
 
 };
 

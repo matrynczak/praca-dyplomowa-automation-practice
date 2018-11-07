@@ -235,7 +235,6 @@ exports.config = {
      * @param {Object} scenario scenario details
      */
     afterScenario: function () {
-
         browser.reload();
     },
     /**
