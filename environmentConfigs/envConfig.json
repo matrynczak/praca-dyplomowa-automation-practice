@@ -1,4 +1,7 @@
 {
-  "user": "example",
+  "user": {
+      "login": "matrynczak@gmail.com",
+      "password": "qwerty123"
+  },
   "testURL": "http://automationpractice.com"
 }

@@ -1,5 +1,5 @@
 import loginPage from '../pages/loginPage';
-import assert from 'assert';
+const assert = require('chai').assert;
 const testURL = "http://automationpractice.com";
 const user = require('../environmentConfigs/envConfig').user;
 import helpers from '../helpers/help-functions';
@@ -88,18 +88,22 @@ class Assert {
     assertUserIsMovedToContactUsPage() {
         assert.equal(browser.getUrl(), `${testURL}/index.php?controller=contact`);
     }
-
     assertUserIsMovedToRegistrationPage() {
         assert.equal(browser.getUrl(), `${testURL}/index.php?controller=authentication&back=my-account`);
     }
-
     assertUserIsMovedToHomePage() {
         assert.equal(browser.getUrl(), `${testURL}/index.php`);
     }
-
     assertTextOfElementIsCorrect(elementOnSite, expectedText) {
         assert.equal(elementOnSite.getText(), expectedText);
     }
+    assertUserIsMovedOnAccountDetailsPage() {
+        assert.equal(browser.getUrl(), `${testURL}/index.php?controller=my-account`)
+    }
+    textOfElementContainsExpectedPhrase(elementOnSite, expectedText) {
+        assert.include(elementOnSite.getText(), expectedText);
+    }
+
 }
 
 export default new Assert();
