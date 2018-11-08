@@ -14,6 +14,16 @@ let helpFunctions = {
         return result;
     },
 
+    getRandOnlyLetterString(length) {
+        let result = "";
+        let allSymbols = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+
+        for (let i = 0; i < length; i++)
+            result += allSymbols.charAt(Math.floor(Math.random() * allSymbols.length));
+
+        return result;
+    },
+
     /**
      * @param collection of elements
      * return size of collection
