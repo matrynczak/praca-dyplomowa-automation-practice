@@ -85,25 +85,30 @@ class Assert {
     /**
      * NEW METHODS - MORE SPECIFIC, NOT GENERAL
      */
+    assertUserIsMovedToSelectedPage(pageUrl) {
+        assert.equal(browser.getUrl(), testURL+pageUrl);
+    }
     assertUserIsMovedToContactUsPage() {
-        assert.equal(browser.getUrl(), `${testURL}/index.php?controller=contact`);
+        this.assertUserIsMovedToSelectedPage('/index.php?controller=contact');
     }
     assertUserIsMovedToRegistrationPage() {
-        assert.equal(browser.getUrl(), `${testURL}/index.php?controller=authentication&back=my-account`);
+        this.assertUserIsMovedToSelectedPage('/index.php?controller=authentication&back=my-account');
     }
     assertUserIsMovedToHomePage() {
-        assert.equal(browser.getUrl(), `${testURL}/index.php`);
+        this.assertUserIsMovedToSelectedPage('/index.php');
     }
     assertTextOfElementIsCorrect(elementOnSite, expectedText) {
         assert.equal(elementOnSite.getText(), expectedText);
     }
     assertUserIsMovedOnAccountDetailsPage() {
-        assert.equal(browser.getUrl(), `${testURL}/index.php?controller=my-account`)
+        this.assertUserIsMovedToSelectedPage('/index.php?controller=my-account');
     }
     textOfElementContainsExpectedPhrase(elementOnSite, expectedText) {
         assert.include(elementOnSite.getText(), expectedText);
     }
-
+    assertAtributeOfElementIsCorrect(elementOnSite, attributeName, expectedAttributeValue) {
+        assert.equal(browser.getAttribute(elementOnSite.selector, attributeName), expectedAttributeValue)
+    }
 }
 
 export default new Assert();
