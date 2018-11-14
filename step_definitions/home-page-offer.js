@@ -17,11 +17,8 @@ defineSupportCode(function ({Then, When}) {
     Then(/^każda oferta na stronie posiada link do szczegółów$/, function () {
         homePageOffer.assertEveryOfferHasUrlToDetails();
     });
-    Then(/^otwiera dowolny produkt z galerii ofert$/, function () {
-        homePageOffer.clickRandomOffer();
-    });
-    Then(/^podstrona produktu odpowiada produktowi z strony głównej$/, function () {
-        homePageOffer.assertOpenedOfferIsProper();
+    Then(/^otwierając dowolny produkt z galerii ofert przechodzi na poprawną podstronę$/, function () {
+        homePageOffer.openRandomOfferPage();
     });
     Then(/^przesuwa kursor na dowolny produkt z galerii ofert i wciska Quick View$/, function () {
         homePageOffer.moveCursorOnRandomOfferAndClickQuickView();

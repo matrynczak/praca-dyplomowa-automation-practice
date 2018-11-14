@@ -1,16 +1,12 @@
 import Page from './initPage';
 import helpers from '../helpers/help-functions';
 import assertions from '../asserts/customAsserts';
+const assert = require('chai').assert;
 
 const firstPartProductUrl = 'http://automationpractice.com/index.php?id_product=';
 const secondPartProductUrl = '&controller=product';
 const bestSellersClassActiveName = 'product_list grid row blockbestsellers tab-pane active';
 const popularClassActiveName = 'product_list grid row homefeatured tab-pane active';
-
-
-
-
-
 
 
 class HomePageOffer extends Page {
@@ -39,6 +35,9 @@ class HomePageOffer extends Page {
     }
     selectedOffer(num){
         return browser.element(`(//ul[@id=\'homefeatured\']//a[@class=\'product_img_link\'])[${num}]`);
+    }
+    selectedOfferTitle(num){
+        return browser.element(`(//div[@class='product-container']//h5[@itemprop='name']/a)[${num}]`);
     }
     quickViewSelectedRandomOffer(num){
         return browser.element(`(//ul[@id='homefeatured']//a[@class='quick-view'])[${num}]`)
@@ -72,12 +71,12 @@ class HomePageOffer extends Page {
             assertions.assertAtributeOfElementContainsCorrectParameter(this.homepageOffer(i), 'href', secondPartProductUrl);
         }
     }
-    // clickRandomOffer(){
-    //     ??????
-    // }
-    // assertOpenedOfferIsProper(){
-    //     ??????
-    // }
+    openRandomOfferPage(){
+        const randomOfferNum = this.getRandomOfferNumber();
+        const productUrlFromOffer = browser.getAttribute(this.selectedOffer(randomOfferNum).selector, 'href');
+        this.selectedOfferTitle(randomOfferNum).click();
+        assert.equal(browser.getUrl(), productUrlFromOffer);
+    }
     getRandomOfferNumber () {
         return helpers.getRandomNumber(1, this.getOffersAmount()/2); //because page contains images for popular and bestsellers
     }
