@@ -109,6 +109,9 @@ class Assert {
     assertAtributeOfElementIsCorrect(elementOnSite, attributeName, expectedAttributeValue) {
         assert.equal(browser.getAttribute(elementOnSite.selector, attributeName), expectedAttributeValue)
     }
+    assertAtributeOfElementContainsCorrectParameter(elementOnSite, attributeName, expectedAttributeValue) {
+        assert.include(browser.getAttribute(elementOnSite.selector, attributeName), expectedAttributeValue)
+    }
 }
 
 export default new Assert();
