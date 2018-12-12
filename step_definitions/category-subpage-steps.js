@@ -44,10 +44,7 @@ defineSupportCode(function ({Then}) {
     Then(/^wciska przycisk subkategorii Dresses$/, function () {
         categorySubpagePage.clickDressesCategory();
     });
-    Then(/^wciska przycisk dowolnej subkategorii$/, function () {
-        categorySubpagePage.opensRandomSubcategory();
-    });
-    Then(/^zostaje przeniesiony na stronę wybranej subkategorii$/, function () {
-        categorySubpagePage.assertUserIsMovedToCategorySite();
+    Then(/^wciska przycisk dowolnej subkategorii i zostaje przeniesiony na poprawna strone$/, function () {
+        categorySubpagePage.opensRandomSubcategoryAndMovedToSubcategorySite();
     });
 });
