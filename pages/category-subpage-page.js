@@ -71,10 +71,10 @@ class SubcategoryPage extends Page {
         assert.equal(browser.getUrl(), specialProductUrl);
     }
     getOffersAmount(){
-        return helpers.getLength(this.categoryOffersToCount()) + 1;
+        return helpers.getLength(this.categoryOffersToCount())/2;  //because page contains images for popular and bestseller
     };
     getRandomOfferNumber() {
-        return helpers.getRandomNumber(1, this.getOffersAmount()); //because page contains images for popular and bestsellers
+        return helpers.getRandomNumber(1, this.getOffersAmount());
     }
     moveOnAndClickRandomQuickView(){
         const randomOfferNum = this.getRandomOfferNumber();
@@ -186,7 +186,7 @@ class SubcategoryPage extends Page {
         this.dressesCategoryButton().click();
     }
     opensRandomSubcategoryAndMovedToSubcategorySite(){
-        const rndSubcategoryNum = helpers.getRandomNumber(1, helpers.getLength(this.subcategoryImage()) + 1);
+        const rndSubcategoryNum = helpers.getRandomNumber(1, helpers.getLength(this.subcategoryImage()));
         const subcategoryTitle = browser.getText(this.subcategoryName(rndSubcategoryNum).selector).replace(/[\s]/g, "");
         this.subcategoryName(rndSubcategoryNum).click();
         assert.equal(browser.getText(this.subcategoryNameInSubcategoryPage().selector).replace(/[\s]/g, ""), subcategoryTitle)

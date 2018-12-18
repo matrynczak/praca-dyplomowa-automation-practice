@@ -15,7 +15,7 @@ class GeneralPage extends Page {
         return browser.element('div.header_user_info a');
     }
     mainLogoButton() {
-        return browser.element('div#header_logo\n');
+        return browser.element('div#header_logo');
     }
 
 
