@@ -88,6 +88,9 @@ class Assert {
     assertUserIsMovedToSelectedPage(pageUrl) {
         assert.equal(browser.getUrl(), testURL+pageUrl);
     }
+    assertOpenedPageUrlContainsCorrectPhrase(urlPart){
+        assert.include(browser.getUrl(), testURL+urlPart)
+    }
     assertUserIsMovedToContactUsPage() {
         this.assertUserIsMovedToSelectedPage('/index.php?controller=contact');
     }
