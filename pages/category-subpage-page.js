@@ -1,4 +1,4 @@
-import Page from './initPage';
+import Page from './init-page';
 import helpers from '../helpers/help-functions';
 const assert = require('chai').assert;
 

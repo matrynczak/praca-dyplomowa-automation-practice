@@ -1,4 +1,4 @@
-import Page from './initPage';
+import Page from './init-page';
 const assert = require('chai').assert;
 
 const facebookLink = 'https://www.facebook.com/groups/525066904174158/';

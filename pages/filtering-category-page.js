@@ -1,4 +1,4 @@
-import Page from './initPage';
+import Page from './init-page';
 import helpers from '../helpers/help-functions';
 import assertions from '../asserts/customAsserts';
 const assert = require('chai').assert;
@@ -137,7 +137,7 @@ class FilteringCategoryPage extends Page {
         this.newProduct().click();
     }
     assertResultContainsOnlyProductWithSelectedCriterias(){
-        browser.pause(2000);
+        browser.pause(5000);
         assert.isBelow(helpers.getLength(this.productInResultsList()), 7, 'Result does not include selected criterias');
     }
     checksTopsOption(){
