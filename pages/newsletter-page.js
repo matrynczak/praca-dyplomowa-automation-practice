@@ -1,4 +1,4 @@
-import Page from './initPage';
+import Page from './init-page';
 import assertions from '../asserts/customAsserts';
 import helpers from "../helpers/help-functions";
 

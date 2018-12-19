@@ -1,6 +1,4 @@
-import Page from './initPage';
-const user = require('../environmentConfigs/envConfig').user;
-import helpers from '../helpers/help-functions';
+import Page from './init-page';
 
 class GeneralPage extends Page {
 
@@ -8,9 +6,6 @@ class GeneralPage extends Page {
      * define elements
      */
 
-    yourLogin() {
-        return browser.element('');
-    }
     signInButton() {
         return browser.element('div.header_user_info a');
     }
