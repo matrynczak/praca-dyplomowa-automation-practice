@@ -60,7 +60,7 @@ class PurchaseProcessPage extends Page {
         return helpers.getRandomNumber(1, range);
     }
     chooseRandomPayMethod() {
-        const randomOfferNum = this.getRandomItemNumber(this.getItemsAmount(this.paymentMethods()));
+        const randomOfferNum = this.getRandomItemNumber(this.getItemsAmount(this.paymentMethods())-1);
         this.randomPaymentMethod(randomOfferNum).click();
         browser.pause(1000);
     }

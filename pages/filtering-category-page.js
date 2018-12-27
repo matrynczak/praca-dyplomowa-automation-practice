@@ -145,10 +145,9 @@ class FilteringCategoryPage extends Page {
         browser.pause(1000);
     }
     clearsAllSearchingCriterias(){
-        const clearIconsNumber = helpers.getLength(this.clearIconsToCount());
-        for(let i=1; i<clearIconsNumber+1; i++){
+        for(let i=1; i<=helpers.getLength(this.clearIconsToCount()); i++){
             this.clearIcon(i).click();
-            browser.pause(1500);
+            browser.pause(2000);
         }
     }
     offersListPresentsDefaultView(){

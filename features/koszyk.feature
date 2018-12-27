@@ -57,7 +57,7 @@ Feature: Testy dla koszyka i procesów związanych z używaniem go na stronie
     And wciska przycisk Proceed to checkout na wyświetlonym oknie
     And wciska przycisk Continue shopping na stronie koszyka
     Then użytkownik zostaje przeniesiony na stronę główną
-#
+
   Scenario: Użytkownik dodaje produkt do koszyka i przechodzi do kupna
     When dla dowolnego produktu z oferty ze strony głównej wciska przycisk Add to cart
     And wciska przycisk Proceed to checkout na wyświetlonym oknie
